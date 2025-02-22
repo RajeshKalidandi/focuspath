@@ -227,7 +227,7 @@ export default function InstallGuide() {
               <p className="mt-2 text-gray-600">Scan this QR code to open FocusPath on your mobile device</p>
               <div className="mt-6 flex justify-center">
                 <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.rajeshkalidandi.online"
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.rajeshkalidandi.online/qr"
                   alt="FocusPath QR Code"
                   className="h-48 w-48"
                 />

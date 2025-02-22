@@ -8,4 +8,25 @@
 - Update landing page with installation guide link
 - Add route for installation guide
 - Fix icon imports and styling
-- Enhance PWA configuration 
+- Enhance PWA configuration
+
+[Cursor] Fix routing and navigation issues
+
+- Fix nested routes under /home path
+- Update navigation links in Layout component
+- Update quick action paths in Home component
+- Add React Router future flags
+- Add catch-all route for 404 handling
+- Fix Content Security Policy for development
+- Update Vite config for better security and performance
+
+[Cursor] Add QR code installation page
+
+- Create new QR install page with:
+  - Welcome greeting and animations
+  - Platform-specific install buttons (iOS/Android)
+  - Step-by-step iOS installation instructions
+  - PWA install prompt for Android
+  - Fallback to web version
+- Update QR code URL in installation guide
+- Add route for QR installation page 

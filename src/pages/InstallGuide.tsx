@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Focus, Smartphone, Globe, Download, ArrowLeft, CheckCircle2, Zap, Lock, Wifi, Clock } from 'lucide-react';
+import { Focus, Smartphone, Globe, Download, ArrowLeft, CheckCircle2, Zap, Lock, Wifi, Clock, Chrome } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -141,32 +141,26 @@ export default function InstallGuide() {
                   {/* Android Instructions */}
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold">Android Installation</h3>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div className="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 className="font-medium text-gray-900 mb-3">Option 1: Direct APK Download</h4>
-                        <p className="text-gray-600 mb-4">Quick installation via APK file</p>
-                        <div className="flex justify-center mb-4">
-                          <img
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.rajeshkalidandi.online/downloads/focuspath.apk"
-                            alt="APK Download QR Code"
-                            className="h-32 w-32"
-                          />
-                        </div>
-                        <p className="text-sm text-gray-500 text-center">Scan to download APK</p>
-                      </div>
-
-                      <div className="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 className="font-medium text-gray-900 mb-3">Option 2: Install as PWA</h4>
-                        <p className="text-gray-600 mb-4">Install from Chrome browser</p>
-                        <div className="flex justify-center mb-4">
-                          <img
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.rajeshkalidandi.online/install-guide"
-                            alt="PWA Installation QR Code"
-                            className="h-32 w-32"
-                          />
-                        </div>
-                        <p className="text-sm text-gray-500 text-center">Scan to install as PWA</p>
-                      </div>
+                    <div className="bg-white p-6 rounded-lg border border-gray-200">
+                      <h4 className="font-medium text-gray-900 mb-3">Install as PWA</h4>
+                      <ol className="space-y-3">
+                        <li className="flex gap-3">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-blue-600 text-sm font-medium text-blue-600">1</span>
+                          <span>Open Chrome and visit <span className="font-mono text-sm bg-gray-100 px-2 py-0.5 rounded">app.rajeshkalidandi.online</span></span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-blue-600 text-sm font-medium text-blue-600">2</span>
+                          <span>Tap the menu button (⋮) at the top right</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-blue-600 text-sm font-medium text-blue-600">3</span>
+                          <span>Select "Install app" or "Add to Home Screen"</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-blue-600 text-sm font-medium text-blue-600">4</span>
+                          <span>Follow the installation prompts</span>
+                        </li>
+                      </ol>
                     </div>
                   </div>
                 </div>
@@ -231,23 +225,6 @@ export default function InstallGuide() {
             </div>
           </div>
         </motion.section>
-
-        {/* QR Code Section */}
-        <section className="mt-16 px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900">Quick Install</h2>
-              <p className="mt-2 text-gray-600">Scan this QR code to open FocusPath on your mobile device</p>
-              <div className="mt-6 flex justify-center">
-                <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.rajeshkalidandi.online/qr"
-                  alt="FocusPath QR Code"
-                  className="h-48 w-48"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );

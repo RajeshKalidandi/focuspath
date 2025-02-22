@@ -9,7 +9,6 @@ import Progress from './pages/Progress';
 import Resources from './pages/Resources';
 import Landing from './pages/Landing';
 import InstallGuide from './pages/InstallGuide';
-import QRInstall from './pages/QRInstall';
 
 // Configure React Router future flags
 const router = {
@@ -67,11 +66,6 @@ function App() {
         <Route path="/install-guide" element={
           <PublicRoute>
             <InstallGuide />
-          </PublicRoute>
-        } />
-        <Route path="/qr" element={
-          <PublicRoute>
-            <QRInstall />
           </PublicRoute>
         } />
 

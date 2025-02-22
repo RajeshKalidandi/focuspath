@@ -1,7 +1,11 @@
-[Cursor] Add comprehensive documentation
+[Cursor] Add installation guide and enhance landing page
 
-- Add detailed README.md with features, setup instructions, and SEO details
-- Add MIT LICENSE file
-- Add CONTRIBUTING.md with guidelines for contributors
-- Include project logo and screenshots
-- Add badges for PWA, license, and contributions 
+- Create new InstallGuide page with:
+  - Step-by-step installation instructions for iOS/Android
+  - Mobile app benefits (offline support, privacy, performance)
+  - Web version benefits
+  - QR code for quick access
+- Update landing page with installation guide link
+- Add route for installation guide
+- Fix icon imports and styling
+- Enhance PWA configuration 

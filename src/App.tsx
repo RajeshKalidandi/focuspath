@@ -10,6 +10,14 @@ import Resources from './pages/Resources';
 import Landing from './pages/Landing';
 import InstallGuide from './pages/InstallGuide';
 
+// Configure React Router future flags
+const router = {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true
+  }
+};
+
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuthStore();
   
@@ -42,7 +50,7 @@ function App() {
   }, [initialize]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter future={router.future}>
       <Routes>
         {/* Public routes */}
         <Route path="/" element={
@@ -72,6 +80,9 @@ function App() {
           <Route path="progress" element={<Progress />} />
           <Route path="resources" element={<Resources />} />
         </Route>
+
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

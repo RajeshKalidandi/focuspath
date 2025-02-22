@@ -43,21 +43,21 @@ function Home() {
       title: 'Start Timer',
       description: 'Focus on productive activities',
       icon: Timer,
-      path: '/timer',
+      path: '/home/timer',
       color: 'bg-blue-100 text-blue-700'
     },
     {
       title: 'View Progress',
       description: 'Track your journey',
       icon: Trophy,
-      path: '/progress',
+      path: '/home/progress',
       color: 'bg-green-100 text-green-700'
     },
     {
       title: 'Resources',
       description: 'Learn and grow',
       icon: BookOpen,
-      path: '/resources',
+      path: '/home/resources',
       color: 'bg-orange-100 text-orange-700'
     }
   ];

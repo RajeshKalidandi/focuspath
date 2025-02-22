@@ -74,6 +74,19 @@ export default defineConfig({
           vendor: ['react', 'react-dom', 'react-router-dom']
         }
       }
+    },
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
+  },
+  server: {
+    headers: {
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://rdmfgelxqtpyjingwtxb.supabase.co https://api.qrserver.com;"
     }
   }
 });

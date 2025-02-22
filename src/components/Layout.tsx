@@ -12,25 +12,25 @@ function Layout() {
       <nav className="fixed bottom-0 w-full bg-white border-t border-gray-200 py-2">
         <div className="container mx-auto px-4">
           <div className="flex justify-around items-center">
-            <NavLink to="/" className={({ isActive }) => 
+            <NavLink to="/home" className={({ isActive }) => 
               `flex flex-col items-center p-2 ${isActive ? 'text-blue-600' : 'text-gray-600'}`
             }>
               <Home size={24} />
               <span className="text-xs mt-1">Home</span>
             </NavLink>
-            <NavLink to="/timer" className={({ isActive }) => 
+            <NavLink to="/home/timer" className={({ isActive }) => 
               `flex flex-col items-center p-2 ${isActive ? 'text-blue-600' : 'text-gray-600'}`
             }>
               <Timer className="w-6 h-6" />
               <span className="text-xs mt-1">Timer</span>
             </NavLink>
-            <NavLink to="/progress" className={({ isActive }) => 
+            <NavLink to="/home/progress" className={({ isActive }) => 
               `flex flex-col items-center p-2 ${isActive ? 'text-blue-600' : 'text-gray-600'}`
             }>
               <LineChart className="w-6 h-6" />
               <span className="text-xs mt-1">Progress</span>
             </NavLink>
-            <NavLink to="/resources" className={({ isActive }) => 
+            <NavLink to="/home/resources" className={({ isActive }) => 
               `flex flex-col items-center p-2 ${isActive ? 'text-blue-600' : 'text-gray-600'}`
             }>
               <BookOpen className="w-6 h-6" />

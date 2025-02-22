@@ -59,3 +59,17 @@ npm-debug.log*
 *.tmp
 *.temp
 .cache/
+
+# Gradle files
+.gradle/
+build/
+app/
+gradle/
+gradlew
+gradlew.bat
+*.properties
+build.gradle
+settings.gradle
+local.properties
+gradle-wrapper.properties
+gradle-wrapper.jar

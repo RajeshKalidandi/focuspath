@@ -32,4 +32,30 @@ dist-ssr
 # PWA
 dev-dist/
 
+# Vercel
 .vercel
+
+# Build artifacts
+build/
+coverage/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Debug files
+debug.log
+npm-debug.log*
+
+# Local SSL certificates
+*.pem
+*.key
+*.crt
+
+# APK files (should be distributed through proper channels)
+*.apk
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

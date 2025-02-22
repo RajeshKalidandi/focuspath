@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Focus, Download, ArrowRight, Smartphone, CheckCircle2 } from 'lucide-react';
+import { Focus, Download, ArrowRight, Smartphone, CheckCircle2, Chrome } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function QRInstall() {
@@ -8,6 +8,7 @@ export default function QRInstall() {
   const [deviceType, setDeviceType] = useState<'ios' | 'android' | 'other'>('other');
   const [installationStep, setInstallationStep] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showAndroidOptions, setShowAndroidOptions] = useState(false);
 
   useEffect(() => {
     // Detect device type
@@ -16,6 +17,7 @@ export default function QRInstall() {
       setDeviceType('ios');
     } else if (/android/.test(userAgent)) {
       setDeviceType('android');
+      setShowAndroidOptions(true);
     }
 
     // Handle PWA install prompt for Android
@@ -28,21 +30,7 @@ export default function QRInstall() {
     window.addEventListener('appinstalled', () => {
       setShowSuccess(true);
     });
-
-    // Auto trigger installation prompt for Android
-    const triggerInstallPrompt = async () => {
-      if (deviceType === 'android' && deferredPrompt) {
-        try {
-          await handleInstall();
-        } catch (error) {
-          console.error('Installation prompt failed:', error);
-        }
-      }
-    };
-
-    const timer = setTimeout(triggerInstallPrompt, 1500);
-    return () => clearTimeout(timer);
-  }, [deviceType, deferredPrompt]);
+  }, []);
 
   const handleInstall = async () => {
     if (deferredPrompt) {
@@ -53,6 +41,11 @@ export default function QRInstall() {
         setShowSuccess(true);
       }
     }
+  };
+
+  const handleAPKDownload = () => {
+    // Replace with your actual APK download URL
+    window.location.href = `${import.meta.env.VITE_APP_URL}/downloads/focuspath.apk`;
   };
 
   const iOSSteps = [
@@ -153,16 +146,46 @@ export default function QRInstall() {
               </motion.div>
             )}
 
-            {deviceType === 'android' && deferredPrompt && (
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleInstall}
-                className="w-full bg-blue-600 text-white rounded-lg px-6 py-3 flex items-center justify-center gap-2 mb-6"
+            {deviceType === 'android' && showAndroidOptions && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="space-y-4 mb-6"
               >
-                <Download className="h-5 w-5" />
-                Install FocusPath
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleAPKDownload}
+                  className="w-full bg-blue-600 text-white rounded-lg px-6 py-3 flex items-center justify-center gap-2"
+                >
+                  <Download className="h-5 w-5" />
+                  Download APK
+                </motion.button>
+
+                {deferredPrompt && (
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-gray-200" />
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="px-2 bg-white text-gray-500">or install as PWA</span>
+                    </div>
+                  </div>
+                )}
+
+                {deferredPrompt && (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleInstall}
+                    className="w-full bg-gray-100 text-gray-900 rounded-lg px-6 py-3 flex items-center justify-center gap-2"
+                  >
+                    <Chrome className="h-5 w-5" />
+                    Install from Chrome
+                  </motion.button>
+                )}
+              </motion.div>
             )}
 
             <motion.div

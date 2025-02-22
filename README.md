@@ -40,12 +40,41 @@ cd focuspath
 npm install
 ```
 
-3. Start the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
+Edit `.env` with your configuration:
+- `VITE_APP_URL`: Your application URL
+- `VITE_SUPABASE_URL`: Your Supabase project URL
+- `VITE_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🔐 Security
+
+### Environment Variables
+- Never commit `.env` files
+- Use `.env.example` as a template
+- Keep API keys and secrets secure
+- Rotate keys if compromised
+
+### API Security
+- All API requests use HTTPS
+- Implements Content Security Policy (CSP)
+- Rate limiting on API endpoints
+- Input validation and sanitization
+
+### Data Privacy
+- End-to-end encryption for sensitive data
+- No tracking or analytics without consent
+- GDPR and CCPA compliant
+- Regular security audits
 
 ## 📱 PWA Installation
 

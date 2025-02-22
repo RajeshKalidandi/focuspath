@@ -64,7 +64,7 @@ function App() {
             <Auth />
           </PublicRoute>
         } />
-        <Route path="/install" element={
+        <Route path="/install-guide" element={
           <PublicRoute>
             <InstallGuide />
           </PublicRoute>

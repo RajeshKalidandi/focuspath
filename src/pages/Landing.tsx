@@ -93,7 +93,7 @@ export default function Landing() {
                 Start Your Journey (Free)
               </Link>
               <Link
-                to="/install"
+                to="/install-guide"
                 className="text-md font-semibold leading-6 text-gray-900 hover:text-blue-600"
               >
                 Installation Guide <span aria-hidden="true">→</span>

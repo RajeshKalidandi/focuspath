@@ -8,6 +8,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icons/*', 'screenshot1.png'],
+      injectRegister: 'auto',
+      strategies: 'generateSW',
       manifest: {
         name: 'FocusPath',
         short_name: 'FocusPath',
@@ -32,19 +34,11 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ],
-        screenshots: [
-          {
-            src: '/screenshot1.png',
-            sizes: '1080x1920',
-            type: 'image/png',
-            platform: 'narrow',
-            label: 'Homescreen of FocusPath'
-          }
-        ],
         categories: ['health', 'lifestyle', 'productivity']
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        navigateFallback: '/index.html',
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/app\.rajeshkalidandi\.online\/.*/i,
@@ -62,10 +56,24 @@ export default defineConfig({
             }
           }
         ]
+      },
+      devOptions: {
+        enabled: true,
+        type: 'module'
       }
     })
   ],
   optimizeDeps: {
     exclude: ['lucide-react']
+  },
+  build: {
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom']
+        }
+      }
+    }
   }
 });

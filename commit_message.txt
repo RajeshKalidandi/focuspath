@@ -1,10 +1,7 @@
-[Cursor] Initial commit
+[Cursor] Add comprehensive documentation
 
-- Initial project setup with React, Vite, and TypeScript
-- Added comprehensive SEO metadata
-- Implemented PWA support with offline functionality
-- Added app icons and manifest
-- Created sitemap and robots.txt
-- Configured service worker with Workbox
-- Removed community features
-- Added progress tracking and timer functionality 
+- Add detailed README.md with features, setup instructions, and SEO details
+- Add MIT LICENSE file
+- Add CONTRIBUTING.md with guidelines for contributors
+- Include project logo and screenshots
+- Add badges for PWA, license, and contributions 

@@ -1,0 +1,12 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://app.rajeshkalidandi.online/sitemap.xml
+
+# Disallow authentication and private routes
+Disallow: /auth
+Disallow: /timer
+Disallow: /progress
+Disallow: /resources 
